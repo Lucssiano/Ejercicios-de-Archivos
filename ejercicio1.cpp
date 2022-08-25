@@ -30,15 +30,13 @@ int main()
   else
   {
     Inscripcion inscp;
-    string nombre, apellido, nombreConcatenado;
     cout << "Ingrese legajo (0 para finalizar) ";
     cin >> inscp.legajo;
     while (inscp.legajo != 0)
     {
       cout << "Nombre y Apellido: ";
-      cin >> nombre >> apellido;
-      nombreConcatenado = nombre + " " + apellido;
-      strcpy(inscp.nombreYApellido, nombreConcatenado.c_str());
+      fflush(stdin);
+      cin.getline(inscp.nombreYApellido, 36);
       cout << "Codigo de la materia: ";
       cin >> inscp.codMateria;
       cout << "Mes del examen: ";
