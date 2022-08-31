@@ -20,6 +20,8 @@ b) actualizar el campo stock del archivo de producto, cada vez que acepte un ped
 c) grabar un archivo binario con el mismo diseño que el archivo de pedidos, con aquellos pedidos que no
 pueden ser satisfechos en su totalidad. */
 
+/* FALTA AGREGAR LOS ARCHIVOS PARA COMPROBAR DE QUE FUNCIONA BIEN */
+
 #include <iostream>
 #include <stdio.h>
 
