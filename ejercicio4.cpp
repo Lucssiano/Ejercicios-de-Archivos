@@ -42,7 +42,7 @@ struct Pedido
 void procesarPedidos(FILE *aPed, FILE *aProd, FILE *aPedNs);
 void procesarUnPedido(Pedido ped, FILE *apr, FILE *ans);
 void mostrarTitulos();
-void mostrar(Pedido);
+void mostrar(Pedido p);
 
 int main()
 {
@@ -78,7 +78,7 @@ void procesarUnPedido(Pedido ped, FILE *aProd, FILE *aPedNs)
   fread(&prod, sizeof(Producto), 1, aProd);
   if (ped.cantPedida <= prod.stock)
   {
-    mostrar(ped); // Falta desarrollar esta
+    mostrar(ped);
     prod.stock -= ped.cantPedida;
     fseek(aProd, (ped.codProd - 1) * sizeof(Producto), SEEK_SET);
     fwrite(&prod, sizeof(Producto), 1, aProd);
@@ -93,4 +93,12 @@ void mostrarTitulos()
        << "Número de Cliente        "
        << "Código de Producto        "
        << "Cantidad pedida       " << endl;
+}
+
+void mostrar(Pedido p)
+{
+  cout << p.nroPed << "        "
+       << p.nroCli << "        "
+       << p.codProd << "        "
+       << p.cantPedida << endl;
 }
