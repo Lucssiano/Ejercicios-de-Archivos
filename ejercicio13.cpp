@@ -40,10 +40,10 @@ int main()
 {
   FILE *archAlumnos, *archAlumAct, *archNovedades;
 
-  generarArchivoAlumnos(archAlumnos);
-  generarArchivoNovedades(archNovedades);
+  // generarArchivoAlumnos(archAlumnos);
+  // generarArchivoNovedades(archNovedades);
 
-  generarArchivoActualizado(archAlumnos, archNovedades, archAlumAct);
+  // generarArchivoActualizado(archAlumnos, archNovedades, archAlumAct);
   return 0;
 }
 
@@ -54,7 +54,7 @@ void generarArchivoActualizado(FILE *archAlum, FILE *archNov, FILE *archActu)
   archActu = fopen("ALUMACTU.dat", "wb");
   archAlum = fopen("ALUMNOS.dat", "rb");
   archNov = fopen("NOVEDADES.dat", "rb");
-  if (archActu == NULL)
+  if (archActu == NULL || archAlum == NULL || archAlum == NULL)
     cout << "ERROR" << endl;
   else
   {
